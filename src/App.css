@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.floorSection{
+    display: flex;
+    width: 60%;
+    /* background-color: blue; */
+    height: 80vh;
+    margin: 50px auto;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.floors{
+    background-color: whitesmoke;
+    width: 98%;
+    margin: 10px auto;
+    height: 127px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid black;
+}
+
+.buttonsDiv{
+    display: flex;
+    flex-direction: column;
+    width: 7%;
+}
+
+.bttn{
+    cursor: pointer;
+    height: 25px;
+    border-radius: 3px;
+}
+
+.liftDiv{
+     /* background-color: whitesmoke; */
+    /* background-color: whitesmoke; */
+    width: 98%;
+    margin: 10px auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.lift{
+    border: 1px solid green;
+    background-color: yellowgreen;
+    height: 70px;
+    width: 48px;
+    position: absolute;
+    /* bottom: 0px; */
+    left: 50%;
+    animation-name: movingUp;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes movingUp {
+  from{
+    bottom: 0px;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  to{
+    bottom: 110px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
 }
