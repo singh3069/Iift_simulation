@@ -3,10 +3,11 @@ import { React, useState } from "react";
 function Floors() {
   const [currentFloor, setcurrentFloor] = useState(0);
 
-  function moveToFloor(e) {
+  function moveBetweenFloors(e) {
     // console.log(e.target.id)
     const currentBttn = e.target.id;
-    setcurrentFloor( + currentBttn);
+    
+    setcurrentFloor(+currentBttn);
   }
 
   return (
@@ -14,7 +15,11 @@ function Floors() {
       <section className="floorSection">
         <div className="floor4 floors">
           <div className="buttonsDiv">
-            <button className="bttn" id="4" onClick={(e) => moveToFloor(e)}>
+            <button
+              className="bttn"
+              id="4"
+              onClick={(e) => moveBetweenFloors(e)}
+            >
               UP
             </button>
             {/* <button>Down</button> */}
@@ -24,11 +29,19 @@ function Floors() {
 
         <div className="floor3 floors">
           <div className="buttonsDiv">
-            <button className="bttn" id="3" onClick={(e) => moveToFloor(e)}>
+            <button
+              className="bttn"
+              id="3"
+              onClick={(e) => moveBetweenFloors(e)}
+            >
               UP
             </button>
             <br />
-            <button className="bttn" id="3" onClick={(e) => moveToFloor(e)}>
+            <button
+              className="bttn"
+              id="3"
+              onClick={(e) => moveBetweenFloors(e)}
+            >
               Down
             </button>
           </div>
@@ -37,11 +50,19 @@ function Floors() {
 
         <div className="floor2 floors">
           <div className="buttonsDiv">
-            <button className="bttn" id="2" onClick={(e) => moveToFloor(e)}>
+            <button
+              className="bttn"
+              id="2"
+              onClick={(e) => moveBetweenFloors(e)}
+            >
               UP
             </button>
             <br />
-            <button className="bttn" id="2" onClick={(e) => moveToFloor(e)}>
+            <button
+              className="bttn"
+              id="2"
+              onClick={(e) => moveBetweenFloors(e)}
+            >
               Down
             </button>
           </div>
@@ -50,11 +71,19 @@ function Floors() {
 
         <div className="floor1 floors">
           <div className="buttonsDiv">
-            <button className="bttn" id="1" onClick={(e) => moveToFloor(e)}>
+            <button
+              className="bttn"
+              id="1"
+              onClick={(e) => moveBetweenFloors(e)}
+            >
               UP
             </button>
             <br />
-            <button className="bttn" id="1" onClick={(e) => moveToFloor(e)}>
+            <button
+              className="bttn"
+              id="1"
+              onClick={(e) => moveBetweenFloors(e)}
+            >
               Down
             </button>
           </div>
@@ -65,13 +94,17 @@ function Floors() {
           <div className="buttonsDiv">
             {/* <button className="bttn">UP</button> */}
             {/* <br /> */}
-            <button className="bttn" id="0" onClick={(e) => moveToFloor(e)}>
+            <button
+              className="bttn"
+              id="0"
+              onClick={(e) => moveBetweenFloors(e)}
+            >
               Down
             </button>
           </div>
           <div
-            className="lift liftMoveM"
-            style={{ transform: `translateY(-${currentFloor * 129}px)` }}
+            className="lift"
+            style={{ transform: `translateY(-${currentFloor * 127}px)` }}
           ></div>
         </div>
       </section>
