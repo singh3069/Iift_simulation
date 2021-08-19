@@ -1,10 +1,9 @@
 import { React, useState } from "react";
 
 function Floors() {
-  const [currentFloor, setcurrentFloor] = useState(0);
-
+  const [currentFloor, setcurrentFloor] = useState("0");
+  console.log(currentFloor)
   function moveBetweenFloors(e) {
-    // console.log(e.target.id)
     const currentBttn = e.target.id;
     
     setcurrentFloor(+currentBttn);
@@ -22,7 +21,6 @@ function Floors() {
             >
               UP
             </button>
-            {/* <button>Down</button> */}
           </div>
           <h3>floor4</h3>
         </div>
@@ -92,8 +90,7 @@ function Floors() {
 
         <div className="liftDiv">
           <div className="buttonsDiv">
-            {/* <button className="bttn">UP</button> */}
-            {/* <br /> */}
+            
             <button
               className="bttn"
               id="0"
@@ -104,7 +101,7 @@ function Floors() {
           </div>
           <div
             className="lift"
-            style={{ transform: `translateY(-${currentFloor * 127}px)` }}
+            style={{ transform: `translateY(-${currentFloor * "144"}px)` }}
           ></div>
         </div>
       </section>

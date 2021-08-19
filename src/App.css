@@ -6,13 +6,10 @@
 .floorSection {
   display: flex;
   width: 60%;
-  /* background-color: blue; */
   height: 80vh;
   margin: 50px auto;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   align-content: center;
-  /* justify-content: space-evenly; */
 }
 
 .floors {
@@ -39,8 +36,6 @@
 }
 
 .liftDiv {
-  /* background-color: whitesmoke; */
-  /* background-color: whitesmoke; */
   width: 98%;
   margin: 10px auto;
   height: 60px;
@@ -55,27 +50,9 @@
   height: 70px;
   width: 48px;
   position: absolute;
-  /* bottom: 0px; */
   left: 50%;
   /* transition-delay: 1s; */
-  transition-duration: 2s;
+  transition-duration: 1s;
 }
 
-.liftMoveM{
-    /* animation-name: movingUp; */
-    /* animation-duration: 4s; */
-    /* animation-iteration-count: 1; */
-    /* animation-fill-mode: forwards; */
-}
 
-/* @keyframes movingUp {
-
-  from{
-    bottom: 0px;
-  }
-
-  to{
-    bottom: 110px;
-  }
-
-} */
