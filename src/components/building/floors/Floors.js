@@ -19,7 +19,7 @@ function Floors() {
               id="4"
               onClick={(e) => moveBetweenFloors(e)}
             >
-              UP
+              Down
             </button>
           </div>
           <h3>floor4</h3>
@@ -90,13 +90,12 @@ function Floors() {
 
         <div className="liftDiv">
           <div className="buttonsDiv">
-            
             <button
               className="bttn"
               id="0"
               onClick={(e) => moveBetweenFloors(e)}
             >
-              Down
+              UP
             </button>
           </div>
           <div
