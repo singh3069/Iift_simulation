@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 
 function Floors() {
   const [currentFloor, setcurrentFloor] = useState("0");
@@ -100,7 +100,7 @@ function Floors() {
           </div>
           <div
             className="lift"
-            style={{ transform: `translateY(-${currentFloor * "144"}px)` }}
+            style={{ transform: `translateY(-${currentFloor * "137.6"}px)` }}
           ></div>
         </div>
       </section>
