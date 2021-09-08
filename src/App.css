@@ -4,7 +4,7 @@
 }
 
 .floorSection {
-  display: flex;
+  /* display: flex; */
   width: 60%;
   height: 80vh;
   margin: 50px auto;
@@ -54,5 +54,3 @@
   /* transition-delay: 1s; */
   transition-duration: 1s;
 }
-
-

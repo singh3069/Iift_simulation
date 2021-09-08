@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 function Floors() {
   const [currentFloor, setcurrentFloor] = useState("0");
-  console.log(currentFloor)
+  // console.log(currentFloor)
   function moveBetweenFloors(e) {
     const currentBttn = e.target.id;
-    
+
     setcurrentFloor(+currentBttn);
   }
 
