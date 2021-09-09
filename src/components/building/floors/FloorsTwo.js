@@ -6,6 +6,13 @@ function FloorsTwo() {
   const [userInput, setUserInput] = useState("");
   const textInput = React.createRef();
 
+  var increment = (function (n) {
+    return function () {
+      n += 1;
+      return n;
+    };
+  })(0);
+
   function moveBetweenFloors(e) {
     const currentBttn = e.target.id;
     setcurrentFloor(+currentBttn);
@@ -34,18 +41,18 @@ function FloorsTwo() {
       </div>
 
       <section className="floorSection">
-        <div className="floor4 floors">
-          <div className="buttonsDiv">
-            <button
+        {/* <div className="floor4 floors"> */}
+        {/* <div className="buttonsDiv"> */}
+        {/* <button
               className="bttn"
-              id="5"
-              onClick={(e) => moveBetweenFloors(e)}
+              // id="5"
+              // onClick={(e) => moveBetweenFloors(e)}
             >
               Down
-            </button>
-          </div>
-          <h3>Top Floor</h3>
-        </div>
+            </button> */}
+        {/* </div> */}
+        {/* <h3>Top Floor</h3> */}
+        {/* </div> */}
 
         {parseInt(userInput) >= 0 ? (
           <>
@@ -53,23 +60,34 @@ function FloorsTwo() {
               .map((i, index) => (
                 <div key={index + 1} className="floor4 floors">
                   <div className="buttonsDiv">
-                    <button
-                      className="bttn"
-                      id="4"
-                      onClick={(e) => moveBetweenFloors(e)}
-                    >
-                      UP
-                    </button>
+                    {Math.max() && (
+                      <button
+                        className="bttn"
+                        id={index + 4}
+                        onClick={(e) => moveBetweenFloors(e)}
+                      >
+                        UP
+                      </button>
+                    )}
 
                     <button
                       className="bttn"
-                      id="4"
+                      id={index + 4}
                       onClick={(e) => moveBetweenFloors(e)}
                     >
-                      DOWN
+                      Down
                     </button>
                   </div>
-                  <h3>Floor{index + 4}</h3>
+                  <div class="room">
+                    <div class="balcony"></div>
+                  </div>
+                  <div class="room">
+                    <div class="balcony"></div>
+                  </div>
+                  <div class="room">
+                    <div class="balcony"></div>
+                  </div>
+                  <h3 class="floorName">Floor{index + 4}</h3>
                 </div>
               ))
               .reverse()}
@@ -79,7 +97,7 @@ function FloorsTwo() {
         )}
 
         {floors.map((item) => (
-          <div className="floor4 floors">
+          <div key={item.id} className="floor4 floors">
             <div className="buttonsDiv">
               <button
                 className="bttn"
@@ -97,11 +115,20 @@ function FloorsTwo() {
                 {item.downBttton}
               </button>
             </div>
-            <h3>{item.floor}</h3>
+            <div class="room">
+              <div class="balcony"></div>
+            </div>
+            <div class="room">
+              <div class="balcony"></div>
+            </div>
+            <div class="room">
+              <div class="balcony"></div>
+            </div>
+            <h3 class="floorName">{item.floor}</h3>
           </div>
         ))}
 
-        <div className="liftDiv">
+        <div className="liftDiv ">
           <div className="buttonsDiv">
             <button
               className="bttn"
@@ -114,7 +141,10 @@ function FloorsTwo() {
           <div
             className="lift"
             style={{ transform: `translateY(-${currentFloor * "137.6"}px)` }}
-          ></div>
+          >
+            <div className="liftLeftDoor"></div>
+            <div className="liftRightDoor"></div>
+          </div>
         </div>
       </section>
     </div>
