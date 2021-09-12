@@ -25,6 +25,7 @@ body {
   /* justify-content: space-between; */
   align-items: center;
   /* border-bottom: 3px solid black; */
+  /* background: rgb(255, 102, 0); */
   background: orange;
   border: 2px solid black;
   border-radius: 5px;
@@ -104,4 +105,33 @@ body {
 
 .liftLeftDoor {
   border-right: 2px solid black;
+}
+
+.inputDiv {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: -1px;
+  width: 16%;
+  position: fixed;
+  top: 0;
+  left: 41%;
+  z-index: 1;
+  align-items: center;
+}
+
+.inputDiv button {
+  width: 30%;
+  cursor: pointer;
+}
+
+@media (max-widt: 1500px) {
+  .floorSection {
+    /* background-color: red; */
+  }
+
+  .floors {
+    background-color: red;
+  }
 }
