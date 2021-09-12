@@ -1,17 +1,9 @@
 import React, { useState } from "react";
 
 function FloorsTwo() {
-  const [floorNum, setFloorNum] = useState();
   const [currentFloor, setcurrentFloor] = useState("0");
   const [userInput, setUserInput] = useState("");
   const textInput = React.createRef();
-
-  var increment = (function (n) {
-    return function () {
-      n += 1;
-      return n;
-    };
-  })(0);
 
   function moveBetweenFloors(e) {
     const currentBttn = e.target.id;
@@ -23,10 +15,12 @@ function FloorsTwo() {
   };
 
   const floors = [
-    { upBtton: "UP", downBttton: "Down", floor: "Floor3", id: "3" },
-    { upBtton: "UP", downBttton: "Down", floor: "Floor2", id: "2" },
-    { upBtton: "UP", downBttton: "Down", floor: "Floor1", id: "1" },
+    { upBtton: "UP", downBttton: "Down", floor: "F-3", id: "3" },
+    { upBtton: "UP", downBttton: "Down", floor: "F-2", id: "2" },
+    { upBtton: "UP", downBttton: "Down", floor: "F-1", id: "1" },
   ];
+
+  const rowLen = userInput.length;
 
   return (
     <div>
@@ -53,14 +47,23 @@ function FloorsTwo() {
         {/* </div> */}
         {/* <h3>Top Floor</h3> */}
         {/* </div> */}
-
         {parseInt(userInput) >= 0 ? (
           <>
             {[...new Array(parseInt(userInput))]
-              .map((i, index) => (
+              .map((i, index, arr) => (
                 <div key={index + 1} className="floor4 floors">
-                  <div className="buttonsDiv">
-                    {Math.max() && (
+                  {index === arr.length - 1 ? (
+                    <div className="buttonsDiv">
+                      <button
+                        className="bttn"
+                        id={index + 4}
+                        onClick={(e) => moveBetweenFloors(e)}
+                      >
+                        Down
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="buttonsDiv">
                       <button
                         className="bttn"
                         id={index + 4}
@@ -68,26 +71,27 @@ function FloorsTwo() {
                       >
                         UP
                       </button>
-                    )}
 
-                    <button
-                      className="bttn"
-                      id={index + 4}
-                      onClick={(e) => moveBetweenFloors(e)}
-                    >
-                      Down
-                    </button>
+                      <button
+                        className="bttn"
+                        id={index + 4}
+                        onClick={(e) => moveBetweenFloors(e)}
+                      >
+                        Down
+                      </button>
+                    </div>
+                  )}
+
+                  <div className="room">
+                    <div className="balcony"></div>
                   </div>
-                  <div class="room">
-                    <div class="balcony"></div>
+                  <div className="room">
+                    <div className="balcony"></div>
                   </div>
-                  <div class="room">
-                    <div class="balcony"></div>
+                  <div className="room">
+                    <div className="balcony"></div>
                   </div>
-                  <div class="room">
-                    <div class="balcony"></div>
-                  </div>
-                  <h3 class="floorName">Floor{index + 4}</h3>
+                  <h3 className="floorName">F-{index + 4}</h3>
                 </div>
               ))
               .reverse()}
@@ -115,16 +119,16 @@ function FloorsTwo() {
                 {item.downBttton}
               </button>
             </div>
-            <div class="room">
-              <div class="balcony"></div>
+            <div className="room">
+              <div className="balcony"></div>
             </div>
-            <div class="room">
-              <div class="balcony"></div>
+            <div className="room">
+              <div className="balcony"></div>
             </div>
-            <div class="room">
-              <div class="balcony"></div>
+            <div className="room">
+              <div className="balcony"></div>
             </div>
-            <h3 class="floorName">{item.floor}</h3>
+            <h3 className="floorName">{item.floor}</h3>
           </div>
         ))}
 
@@ -140,7 +144,7 @@ function FloorsTwo() {
           </div>
           <div
             className="lift"
-            style={{ transform: `translateY(-${currentFloor * "137.6"}px)` }}
+            style={{ transform: `translateY(-${currentFloor * "160"}px)` }}
           >
             <div className="liftLeftDoor"></div>
             <div className="liftRightDoor"></div>
