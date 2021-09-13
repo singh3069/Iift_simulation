@@ -144,6 +144,7 @@ function FloorsTwo() {
               UP
             </button>
           </div>
+
           <div
             className="lift"
             style={{ transform: `translateY(-${currentFloor * 174}px)` }}
