@@ -122,10 +122,6 @@ body {
 /*----------------------------------------- Media Querry -----------------------------------------  */
 
 @media (max-width: 1400px) {
-  .floorSection {
-    /* background-color: red; */
-  }
-
   .floors {
     background-color: red;
   }
@@ -169,5 +165,93 @@ body {
 
   .balcony {
     height: 22px;
+  }
+}
+
+@media (max-width: 860px) {
+  .lift {
+    left: 15%;
+  }
+}
+
+@media (max-width: 800px) {
+  .room {
+    height: 60px;
+    width: 60px;
+  }
+
+  .bttn {
+    width: 38px;
+  }
+
+  .lift {
+    left: 16%;
+  }
+}
+
+@media (max-width: 755px) {
+  .room {
+    width: 55px;
+  }
+}
+
+@media (max-width: 705px) {
+  .lift {
+    height: 44px;
+    width: 36px;
+    left: 16%;
+  }
+}
+
+@media (max-width: 677px) {
+  .room {
+    height: 50px;
+    width: 45px;
+  }
+  .lift {
+    left: 17.5%;
+  }
+
+  .bttn {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  .room {
+    height: 50px;
+    width: 45px;
+  }
+  .lift {
+    height: 38px;
+    width: 25px;
+    left: 16%;
+  }
+
+  .bttn {
+    font-size: 7px;
+    font-weight: 700;
+    width: 25px;
+  }
+}
+
+@media (max-width: 370px) {
+  .room {
+    height: 36px;
+    width: 30px;
+  }
+
+  .balcony {
+    height: 10px;
+  }
+
+  .lift {
+    height: 36px;
+    width: 14px;
+    left: 16%;
+  }
+
+  .bttn {
+    width: 21px;
   }
 }
