@@ -122,9 +122,9 @@ body {
 /*----------------------------------------- Media Querry -----------------------------------------  */
 
 @media (max-width: 1400px) {
-  .floors {
+  /* .floors {
     background-color: red;
-  }
+  } */
 
   .room {
     height: 100px;
@@ -133,6 +133,11 @@ body {
 
   .lift {
     left: 14%;
+  }
+
+  .inputDiv {
+    display: flex;
+    width: 26%;
   }
 }
 
@@ -233,6 +238,10 @@ body {
     font-weight: 700;
     width: 25px;
   }
+
+  .inputDiv {
+    left: 34%;
+  }
 }
 
 @media (max-width: 370px) {
@@ -254,4 +263,13 @@ body {
   .bttn {
     width: 21px;
   }
+
+  .inputDiv {
+    width: 40%;
+    left: 22%;
+  }
 }
+
+/* .inputDiv {
+    width: 20%;
+  } */
