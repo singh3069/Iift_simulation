@@ -151,13 +151,6 @@ function FloorsTwo() {
             <div className="liftLeftDoor"></div>
             <div className="liftRightDoor"></div>
           </div>
-          <div
-            className="lift"
-            style={{ transform: `translateY(-${currentFloor * 174}px)` }}
-          >
-            <div className="liftLeftDoor"></div>
-            <div className="liftRightDoor"></div>
-          </div>
           <h3 className="floorName">Ground</h3>
         </div>
       </section>
