@@ -7,6 +7,13 @@ body {
   background-color: black;
 }
 
+.heading {
+  top: 0;
+  position: fixed;
+  color: orange;
+  z-index: 1;
+}
+
 .floorSection {
   /* display: flex; */
   width: 60%;
@@ -267,6 +274,11 @@ body {
   .inputDiv {
     width: 40%;
     left: 22%;
+  }
+
+  .heading {
+    font-size: 11px;
+    font-weight: 700;
   }
 }
 

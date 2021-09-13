@@ -31,6 +31,7 @@ function FloorsTwo() {
 
   return (
     <div>
+      <h2 className="heading">Lift Simulation</h2>
       <div className="inputDiv">
         <input
           placeholder="Set No. of Floors"
@@ -142,6 +143,13 @@ function FloorsTwo() {
             >
               UP
             </button>
+          </div>
+          <div
+            className="lift"
+            style={{ transform: `translateY(-${currentFloor * 174}px)` }}
+          >
+            <div className="liftLeftDoor"></div>
+            <div className="liftRightDoor"></div>
           </div>
           <div
             className="lift"
