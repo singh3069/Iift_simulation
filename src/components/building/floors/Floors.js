@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, createRef } from "react";
 // import "./mediaQuerry.css";
 
 function FloorsTwo() {
   const [currentFloor, setcurrentFloor] = useState("0");
   const [userInput, setUserInput] = useState("");
-  const textInput = React.createRef();
+  const textInput = createRef();
 
   /**
    * Moving the lift in between the floors
