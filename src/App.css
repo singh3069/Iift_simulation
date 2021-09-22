@@ -32,7 +32,6 @@ body {
   background: orange;
   border: 2px solid black;
   border-radius: 5px;
-  justify-content: space-around;
   position: relative;
 }
 
@@ -74,7 +73,7 @@ body {
   border-radius: 3px;
 }
 
-.liftDiv {
+/* .liftDiv {
   width: 100%;
   margin: 10px auto;
   height: 160px;
@@ -82,7 +81,7 @@ body {
   align-items: center;
   position: relative;
   background-color: brown;
-}
+} */
 
 .lift {
   border: 2px solid black;
@@ -94,6 +93,28 @@ body {
   left: 16%;
   transition-duration: 1s;
   /* bottom: -25px; */
+}
+
+.lift_2 {
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  height: 82px;
+  width: 61px;
+  transition-duration: 1s;
+  position: absolute;
+  right: 5%;
+}
+
+.lift_3 {
+  border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  height: 82px;
+  width: 61px;
+  transition-duration: 1s;
+  position: absolute;
+  right: 20%;
 }
 
 .liftLeftDoor,
