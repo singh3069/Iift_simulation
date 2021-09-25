@@ -1,8 +1,23 @@
-import React, { useState, createRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // import "./mediaQuerry.css";
 
 function FloorsTwo() {
   const [currentFloor, setcurrentFloor] = useState("0");
+
+  const prevFloorNum = useRef();
+  useEffect(() => {
+    prevFloorNum.current = currentFloor;
+  });
+  const prevFloorCount = prevFloorNum.current;
+
+  const style = {
+    transform: `translateY(-${currentFloor * 174}px)`,
+    transitionDuration: `${(currentFloor - prevFloorCount) * 2}s`,
+  };
+
+  console.log("current" + currentFloor);
+  console.log("previoua" + prevFloorCount);
+  console.log(style);
 
   /**
    * Moving the lift in between the floors
@@ -79,27 +94,18 @@ function FloorsTwo() {
             </button>
           </div>
 
-          <div
-            className="lift"
-            style={{ transform: `translateY(-${currentFloor * 174}px)` }}
-          >
+          <div className="lift" style={style}>
             <div className="liftLeftDoor"></div>
             <div className="liftRightDoor"></div>
           </div>
-          <div
-            className="lift_2"
-            style={{ transform: `translateY(-${currentFloor * 174}px)` }}
-          >
+          {/* <div className="lift_2" style={trans}>
             <div className="liftLeftDoor"></div>
             <div className="liftRightDoor"></div>
           </div>
-          <div
-            className="lift_3"
-            style={{ transform: `translateY(-${currentFloor * 174}px)` }}
-          >
+          <div className="lift_3" style={trans}>
             <div className="liftLeftDoor"></div>
             <div className="liftRightDoor"></div>
-          </div>
+          </div> */}
           <h3 className="floorName">Ground-Floor</h3>
         </div>
       </section>

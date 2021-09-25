@@ -91,7 +91,8 @@ body {
   width: 61px;
   position: absolute;
   left: 16%;
-  transition-duration: 1s;
+  /* transition-duration: 1s; */
+  transition-timing-function: linear;
   /* bottom: -25px; */
 }
 
@@ -102,6 +103,7 @@ body {
   height: 82px;
   width: 61px;
   transition-duration: 1s;
+  transition-timing-function: linear;
   position: absolute;
   right: 5%;
 }
@@ -113,6 +115,7 @@ body {
   height: 82px;
   width: 61px;
   transition-duration: 1s;
+  transition-timing-function: linear;
   position: absolute;
   right: 20%;
 }
