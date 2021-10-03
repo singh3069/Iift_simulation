@@ -23,15 +23,12 @@ https://sr-lift-simulation.netlify.app/
 For running the project on local, follow the following steps.
 ##### For npm
 ```
-$ git clone https://github.com/thoughtlessmind/swipe-jobs.git
-$ cd job-portal
 $ npm install
 $ npm start
 ```
 ##### For yarn
 ```
-$ git clone https://github.com/thoughtlessmind/swipe-jobs.git
-$ cd job-portal
+
 $ yarn
 $ yarn start
 ```
