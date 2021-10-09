@@ -1,10 +1,23 @@
-import React, { useState, createRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // import "./mediaQuerry.css";
 
 function FloorsTwo() {
   const [currentFloor, setcurrentFloor] = useState("0");
-  const [userInput, setUserInput] = useState("");
-  const textInput = createRef();
+
+  const prevFloorNum = useRef();
+  useEffect(() => {
+    prevFloorNum.current = currentFloor;
+  });
+  const prevFloorCount = prevFloorNum.current;
+
+  const style = {
+    transform: `translateY(-${currentFloor * 174}px)`,
+    transitionDuration: `${(currentFloor - prevFloorCount) * 2}s`,
+  };
+
+  console.log("current" + currentFloor);
+  console.log("previoua" + prevFloorCount);
+  console.log(style);
 
   /**
    * Moving the lift in between the floors
@@ -14,16 +27,15 @@ function FloorsTwo() {
     setcurrentFloor(+currentBttn);
   }
 
-  /**
-   * Adding floors based on user input
-   */
-  const addFloors = () => {
-    setUserInput(textInput.current.value);
-  };
-
   /* Fixed floors statitcs */
-
   const floors = [
+    { downBttton: "Down", floor: "F-10", id: "10" },
+    { upBtton: "UP", downBttton: "Down", floor: "F-9", id: "9" },
+    { upBtton: "UP", downBttton: "Down", floor: "F-8", id: "8" },
+    { upBtton: "UP", downBttton: "Down", floor: "F-7", id: "7" },
+    { upBtton: "UP", downBttton: "Down", floor: "F-6", id: "6" },
+    { upBtton: "UP", downBttton: "Down", floor: "F-5", id: "5" },
+    { upBtton: "UP", downBttton: "Down", floor: "F-4", id: "4" },
     { upBtton: "UP", downBttton: "Down", floor: "F-3", id: "3" },
     { upBtton: "UP", downBttton: "Down", floor: "F-2", id: "2" },
     { upBtton: "UP", downBttton: "Down", floor: "F-1", id: "1" },
@@ -32,102 +44,39 @@ function FloorsTwo() {
   return (
     <div>
       <h2 className="heading">Lift Simulation</h2>
-      <div className="inputDiv">
-        <input
-          placeholder="Set No. of Floors"
-          type="number"
-          id="floor"
-          ref={textInput}
-          min="0"
-        />
-        <button onClick={(e) => addFloors()}>Add Floors</button>
-      </div>
-
       <section className="floorSection">
-        {/* Maping through user input and rendering the floors */}
-        {parseInt(userInput) >= 0 ? (
-          <>
-            {[...new Array(parseInt(userInput))]
-              .map((i, index, arr) => (
-                <div key={index + 1} className="floor4 floors">
-                  {index === arr.length - 1 ? (
-                    <div className="buttonsDiv">
-                      <button
-                        className="bttn"
-                        id={index + 4}
-                        onClick={(e) => moveBetweenFloors(e)}
-                      >
-                        Down
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="buttonsDiv">
-                      <button
-                        className="bttn"
-                        id={index + 4}
-                        onClick={(e) => moveBetweenFloors(e)}
-                      >
-                        UP
-                      </button>
-
-                      <button
-                        className="bttn"
-                        id={index + 4}
-                        onClick={(e) => moveBetweenFloors(e)}
-                      >
-                        Down
-                      </button>
-                    </div>
-                  )}
-
-                  <div className="room">
-                    <div className="balcony"></div>
-                  </div>
-                  <div className="room">
-                    <div className="balcony"></div>
-                  </div>
-                  <div className="room">
-                    <div className="balcony"></div>
-                  </div>
-                  <h3 className="floorName">F-{index + 4}</h3>
-                </div>
-              ))
-              .reverse()}
-          </>
-        ) : (
-          ""
-        )}
-
         {/* Maping through Fixed floors statitcs rendering the floors */}
 
         {floors.map((item) => (
           <div key={item.id} className="floor4 floors">
-            <div className="buttonsDiv">
-              <button
-                className="bttn"
-                id={item.id}
-                onClick={(e) => moveBetweenFloors(e)}
-              >
-                {item.upBtton}
-              </button>
-
-              <button
-                className="bttn"
-                id={item.id}
-                onClick={(e) => moveBetweenFloors(e)}
-              >
-                {item.downBttton}
-              </button>
-            </div>
-            <div className="room">
-              <div className="balcony"></div>
-            </div>
-            <div className="room">
-              <div className="balcony"></div>
-            </div>
-            <div className="room">
-              <div className="balcony"></div>
-            </div>
+            {item.id === "10" ? (
+              <div className="buttonsDiv">
+                <button
+                  className="bttn"
+                  id={item.id}
+                  onClick={(e) => moveBetweenFloors(e)}
+                >
+                  {item.downBttton}
+                </button>
+              </div>
+            ) : (
+              <div className="buttonsDiv">
+                <button
+                  className="bttn"
+                  id={item.id}
+                  onClick={(e) => moveBetweenFloors(e)}
+                >
+                  {item.upBtton}
+                </button>
+                <button
+                  className="bttn"
+                  id={item.id}
+                  onClick={(e) => moveBetweenFloors(e)}
+                >
+                  {item.downBttton}
+                </button>
+              </div>
+            )}
             <h3 className="floorName">{item.floor}</h3>
           </div>
         ))}
@@ -145,14 +94,19 @@ function FloorsTwo() {
             </button>
           </div>
 
-          <div
-            className="lift"
-            style={{ transform: `translateY(-${currentFloor * 174}px)` }}
-          >
+          <div className="lift" style={style}>
             <div className="liftLeftDoor"></div>
             <div className="liftRightDoor"></div>
           </div>
-          <h3 className="floorName">Ground</h3>
+          {/* <div className="lift_2" style={trans}>
+            <div className="liftLeftDoor"></div>
+            <div className="liftRightDoor"></div>
+          </div>
+          <div className="lift_3" style={trans}>
+            <div className="liftLeftDoor"></div>
+            <div className="liftRightDoor"></div>
+          </div> */}
+          <h3 className="floorName">Ground-Floor</h3>
         </div>
       </section>
     </div>
