@@ -41,7 +41,11 @@ body {
   bottom: 0px;
 }
 
-.room {
+.link {
+  position: absolute;
+}
+
+/* .room {
   height: 120px;
   width: 120px;
   background: white;
@@ -59,7 +63,7 @@ body {
   height: 40px;
   border-top: 3px solid black;
   box-shadow: 5px 6px 6px 0px;
-}
+} */
 
 .buttonsDiv {
   display: flex;
